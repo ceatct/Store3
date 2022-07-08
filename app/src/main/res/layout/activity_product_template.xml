@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_layout"
+    android:layout_width="180dp"
+    android:layout_height="280dp"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".product_template">
+
+
+    <ImageView
+        android:id="@+id/product_img"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/sliva" />
+
+    <ImageButton
+        android:id="@+id/likee_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="89dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
+        android:translationY="15dp"
+        app:srcCompat="@drawable/ic_orange_like"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/opnkosh_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="89dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
+        android:translationX="100dp"
+        android:translationY="-30dp"
+        app:srcCompat="@drawable/ic_krug_kosh"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/name_txt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:text="Слива Венгарка вагова, 1 кг"
+        android:textAlignment="center"
+        android:textColor="#3D3E52"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/price_txt"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_weight="1"
+        android:text="14.90 ₴"
+        android:textAlignment="center"
+        android:textColor="#3D3E52" />
+
+</LinearLayout>
