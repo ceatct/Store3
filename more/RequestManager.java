@@ -18,17 +18,17 @@ public class RequestManager {
     Context context;
 
     Retrofit retrofit = new Retrofit.Builder().
-            baseUrl("https://newsapi.org/v2")
+            baseUrl("https://webmagazin-app.glyanec.net/basket/api/v1.0/categorylist")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
     public void getProduct(DataListener<ApiResponce> listener, String category, String query){
         CallApi callApi = retrofit.create(CallApi.class);
-        Call<ApiResponce> call = callApi.callApiStore("us", category, query, context.getString(R.string.api_key));
+        Call<ApiResponce> call = callApi.callApiStore();
 
         try {call.enqueue(new Callback<ApiResponce>() {
             @Override
-            public void onResponse(Call<ApiResponce> call, @NonNull Response<ApiResponce> response) {
+            public void onResponse(Call<ApiResponce> call, @NonNull Response<ApiResponce> response parent, depth) {
                 if (!response.isSuccessful()){
                     Toast.makeText(context, "ERROR", Toast.LENGTH_LONG).show();
                 }
@@ -52,10 +52,8 @@ public class RequestManager {
     public interface CallApi{
         @GET("top-headlines")
         Call<ApiResponce> callApiStore(
-                @Query("country") String country,
-                @Query("category") String category,
-                @Query("q") String query,
-                @Query("apiKey") String api_key
+                @Query("parent") String parent,
+                @Query("depth") String depth,
         );
     }
 }
